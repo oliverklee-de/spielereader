@@ -4,12 +4,24 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
+  ci:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: "/public"
   deploy:
     name: Deploy
 
     runs-on: ubuntu-24.04
+
+    needs: ci
 
     if: ${{ github.ref_name == 'main' && github.event_name == 'push' }}
 
