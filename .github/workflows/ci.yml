@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  ci:
+  html-validation:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
 
     runs-on: ubuntu-24.04
 
-    needs: ci
+    needs: html-validation
 
     if: ${{ github.ref_name == 'main' && github.event_name == 'push' }}
 
