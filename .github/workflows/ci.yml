@@ -10,10 +10,11 @@ jobs:
   html-validation:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+      - uses: actions/checkout@v6
+      - uses: Cyb3r-Jak3/html5validator-action@v8.0.0
         with:
           root: "./public"
+
   deploy:
     name: Deploy
 
