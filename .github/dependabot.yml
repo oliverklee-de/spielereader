@@ -6,8 +6,5 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    milestone: 1
-    assignees:
-      - "oliverklee"
     reviewers:
       - "oliverklee"
